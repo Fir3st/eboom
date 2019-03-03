@@ -1,7 +1,7 @@
 {
     "name": "eboom",
     "description": "Boom responses implementation for ExpressJS.",
-    "version": "0.0.1",
+    "version": "0.0.11",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
