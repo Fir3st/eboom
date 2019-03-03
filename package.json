@@ -1,0 +1,35 @@
+{
+    "name": "eboom",
+    "description": "Boom responses implementation for ExpressJS.",
+    "version": "0.0.1",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "author": "Vladimír Fojtík <fojtik.v@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "Boom",
+        "Express",
+        "ExpressJS",
+        "responses"
+    ],
+    "dependencies": {
+        "boom": "^7.3.0"
+    },
+    "devDependencies": {
+        "tslint": "^5.13.1",
+        "tslint-config-airbnb": "^5.11.1",
+        "typescript": "^3.3.3333"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Fir3st/eboom.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Fir3st/eboom/issues"
+    },
+    "homepage": "https://github.com/Fir3st/eboom"
+}
