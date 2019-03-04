@@ -11,14 +11,14 @@ export = () => {
         });
 
         for (const method of methods) {
-            res.boom[method] = (message: string = "", payload: any = {}) => {
+            res.boom[method] = (message: string = "", data: any = {}) => {
                 const Boomed = Boom[method].apply(Boom, [message]);
-                const BoomedWithPayload = {
-                    ...Boomed.output.payload,
-                    ...payload
-                };
+                const BoomedWithData = { ...Boomed.output.payload };
+                if (Object.keys(data).length > 0) {
+                    BoomedWithData['data'] = { ... data };
+                }
 
-                return res.status(Boomed.output.statusCode).send(BoomedWithPayload);
+                return res.status(Boomed.output.statusCode).send(BoomedWithData);
             };
         }
 
