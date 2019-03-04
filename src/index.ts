@@ -1,7 +1,8 @@
+import { Request, Response, NextFunction } from 'express';
 import * as Boom from 'Boom';
 
-export default () => {
-    return (req, res, next) => {
+export = () => {
+    return (req: Request, res: any, next: NextFunction) => {
         if (res.boom) throw new Error('Boom already exists on response object.');
 
         res.boom = {};
@@ -23,4 +24,4 @@ export default () => {
 
         next();
     };
-};
+}
