@@ -9,14 +9,17 @@ export default () => {
             return typeof Boom[prop] == 'function';
         });
 
-        methods.forEach((key) => {
-            res.boom[key] = function() {
-                const Boomed = Boom[key].apply(Boom, arguments);
-                const BoomedWithAdditionalResponse = Object.assign(Boomed.output.payload, arguments[1]);
+        for (const method of methods) {
+            res.boom[method] = (message: string = "", payload: any = {}) => {
+                const Boomed = Boom[method].apply(Boom, [message]);
+                const BoomedWithPayload = {
+                    ...Boomed.output.payload,
+                    ...payload
+                };
 
-                return res.status(Boomed.output.statusCode).send(BoomedWithAdditionalResponse);
+                return res.status(Boomed.output.statusCode).send(BoomedWithPayload);
             };
-        });
+        }
 
         next();
     };
