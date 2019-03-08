@@ -1,5 +1,5 @@
-import { Request, Response, NextFunction } from 'express';
-import * as Boom from 'Boom';
+import { Request, NextFunction } from 'express';
+import * as Boom from 'boom';
 
 export = () => {
     return (req: Request, res: any, next: NextFunction) => {
